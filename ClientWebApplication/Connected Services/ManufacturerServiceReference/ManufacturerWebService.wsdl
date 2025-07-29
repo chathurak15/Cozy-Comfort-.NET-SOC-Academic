@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertBlanketInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="material" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertBlanketInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertBlanketInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertBlanketStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ManufacturerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stock" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertBlanketStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertBlanketStockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBlanketNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlankets">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBlanketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDistributorOrder">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDistributorOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDistributorOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcurrentStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manufacturerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcurrentStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getcurrentStockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manufacturerId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newStock" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateStockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBlanket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBlanketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteBlanketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDisributorRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDisributorRequestStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateDisributorRequestStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkManufacturerStockAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkManufacturerStockAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkManufacturerStockAvailabilityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertBlanketInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:insertBlanketInfo" />
+  </wsdl:message>
+  <wsdl:message name="insertBlanketInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:insertBlanketInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertBlanketStockSoapIn">
+    <wsdl:part name="parameters" element="tns:insertBlanketStock" />
+  </wsdl:message>
+  <wsdl:message name="insertBlanketStockSoapOut">
+    <wsdl:part name="parameters" element="tns:insertBlanketStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketName" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketId" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketsSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlankets" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketsSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDistributorOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:getDistributorOrder" />
+  </wsdl:message>
+  <wsdl:message name="getDistributorOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:getDistributorOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getcurrentStockSoapIn">
+    <wsdl:part name="parameters" element="tns:getcurrentStock" />
+  </wsdl:message>
+  <wsdl:message name="getcurrentStockSoapOut">
+    <wsdl:part name="parameters" element="tns:getcurrentStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateStockSoapIn">
+    <wsdl:part name="parameters" element="tns:updateStock" />
+  </wsdl:message>
+  <wsdl:message name="updateStockSoapOut">
+    <wsdl:part name="parameters" element="tns:updateStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteBlanketSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteBlanket" />
+  </wsdl:message>
+  <wsdl:message name="deleteBlanketSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteBlanketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDisributorRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDisributorRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="updateDisributorRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDisributorRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkManufacturerStockAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:checkManufacturerStockAvailability" />
+  </wsdl:message>
+  <wsdl:message name="checkManufacturerStockAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:checkManufacturerStockAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ManufacturerWebServiceSoap">
+    <wsdl:operation name="insertBlanketInfo">
+      <wsdl:input message="tns:insertBlanketInfoSoapIn" />
+      <wsdl:output message="tns:insertBlanketInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanketStock">
+      <wsdl:input message="tns:insertBlanketStockSoapIn" />
+      <wsdl:output message="tns:insertBlanketStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <wsdl:input message="tns:getBlanketNameSoapIn" />
+      <wsdl:output message="tns:getBlanketNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketId">
+      <wsdl:input message="tns:getBlanketIdSoapIn" />
+      <wsdl:output message="tns:getBlanketIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlankets">
+      <wsdl:input message="tns:getBlanketsSoapIn" />
+      <wsdl:output message="tns:getBlanketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrder">
+      <wsdl:input message="tns:getDistributorOrderSoapIn" />
+      <wsdl:output message="tns:getDistributorOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getcurrentStock">
+      <wsdl:input message="tns:getcurrentStockSoapIn" />
+      <wsdl:output message="tns:getcurrentStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStock">
+      <wsdl:input message="tns:updateStockSoapIn" />
+      <wsdl:output message="tns:updateStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <wsdl:input message="tns:deleteBlanketSoapIn" />
+      <wsdl:output message="tns:deleteBlanketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDisributorRequestStatus">
+      <wsdl:input message="tns:updateDisributorRequestStatusSoapIn" />
+      <wsdl:output message="tns:updateDisributorRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkManufacturerStockAvailability">
+      <wsdl:input message="tns:checkManufacturerStockAvailabilitySoapIn" />
+      <wsdl:output message="tns:checkManufacturerStockAvailabilitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ManufacturerWebServiceSoap" type="tns:ManufacturerWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertBlanketInfo">
+      <soap:operation soapAction="http://tempuri.org/insertBlanketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanketStock">
+      <soap:operation soapAction="http://tempuri.org/insertBlanketStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <soap:operation soapAction="http://tempuri.org/getBlanketName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketId">
+      <soap:operation soapAction="http://tempuri.org/getBlanketId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlankets">
+      <soap:operation soapAction="http://tempuri.org/getBlankets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrder">
+      <soap:operation soapAction="http://tempuri.org/getDistributorOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcurrentStock">
+      <soap:operation soapAction="http://tempuri.org/getcurrentStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStock">
+      <soap:operation soapAction="http://tempuri.org/updateStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <soap:operation soapAction="http://tempuri.org/deleteBlanket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDisributorRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/updateDisributorRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkManufacturerStockAvailability">
+      <soap:operation soapAction="http://tempuri.org/checkManufacturerStockAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ManufacturerWebServiceSoap12" type="tns:ManufacturerWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertBlanketInfo">
+      <soap12:operation soapAction="http://tempuri.org/insertBlanketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanketStock">
+      <soap12:operation soapAction="http://tempuri.org/insertBlanketStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketId">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlankets">
+      <soap12:operation soapAction="http://tempuri.org/getBlankets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrder">
+      <soap12:operation soapAction="http://tempuri.org/getDistributorOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcurrentStock">
+      <soap12:operation soapAction="http://tempuri.org/getcurrentStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStock">
+      <soap12:operation soapAction="http://tempuri.org/updateStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <soap12:operation soapAction="http://tempuri.org/deleteBlanket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDisributorRequestStatus">
+      <soap12:operation soapAction="http://tempuri.org/updateDisributorRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkManufacturerStockAvailability">
+      <soap12:operation soapAction="http://tempuri.org/checkManufacturerStockAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManufacturerWebService">
+    <wsdl:port name="ManufacturerWebServiceSoap" binding="tns:ManufacturerWebServiceSoap">
+      <soap:address location="https://localhost:44345/ManufacturerWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ManufacturerWebServiceSoap12" binding="tns:ManufacturerWebServiceSoap12">
+      <soap12:address location="https://localhost:44345/ManufacturerWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

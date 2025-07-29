@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="addCustomerOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="blanketId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sellerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addCustomerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addCustomerOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSellerInventry">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSellerInventryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSellerInventryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="serachBlanket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="serachBlanketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serachBlanketResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerOrder">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCustomerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomerOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSellerDistributorRequests">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSellerDistributorRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSellerDistributorRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addSellerDistributorRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sellerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distributorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addSellerDistributorRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addSellerDistributorRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSellerOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSellerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateSellerOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSellerOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSellerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteSellerOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="addCustomerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:addCustomerOrder" />
+  </wsdl:message>
+  <wsdl:message name="addCustomerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:addCustomerOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSellerInventrySoapIn">
+    <wsdl:part name="parameters" element="tns:getSellerInventry" />
+  </wsdl:message>
+  <wsdl:message name="getSellerInventrySoapOut">
+    <wsdl:part name="parameters" element="tns:getSellerInventryResponse" />
+  </wsdl:message>
+  <wsdl:message name="serachBlanketSoapIn">
+    <wsdl:part name="parameters" element="tns:serachBlanket" />
+  </wsdl:message>
+  <wsdl:message name="serachBlanketSoapOut">
+    <wsdl:part name="parameters" element="tns:serachBlanketResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomerOrder" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomerOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSellerDistributorRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:getSellerDistributorRequests" />
+  </wsdl:message>
+  <wsdl:message name="getSellerDistributorRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:getSellerDistributorRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addSellerDistributorRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:addSellerDistributorRequest" />
+  </wsdl:message>
+  <wsdl:message name="addSellerDistributorRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:addSellerDistributorRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSellerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:updateSellerOrder" />
+  </wsdl:message>
+  <wsdl:message name="updateSellerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:updateSellerOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSellerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteSellerOrder" />
+  </wsdl:message>
+  <wsdl:message name="deleteSellerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteSellerOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SellerServiceSoap">
+    <wsdl:operation name="addCustomerOrder">
+      <wsdl:input message="tns:addCustomerOrderSoapIn" />
+      <wsdl:output message="tns:addCustomerOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSellerInventry">
+      <wsdl:input message="tns:getSellerInventrySoapIn" />
+      <wsdl:output message="tns:getSellerInventrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="serachBlanket">
+      <wsdl:input message="tns:serachBlanketSoapIn" />
+      <wsdl:output message="tns:serachBlanketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerOrder">
+      <wsdl:input message="tns:getCustomerOrderSoapIn" />
+      <wsdl:output message="tns:getCustomerOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSellerDistributorRequests">
+      <wsdl:input message="tns:getSellerDistributorRequestsSoapIn" />
+      <wsdl:output message="tns:getSellerDistributorRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addSellerDistributorRequest">
+      <wsdl:input message="tns:addSellerDistributorRequestSoapIn" />
+      <wsdl:output message="tns:addSellerDistributorRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerOrder">
+      <wsdl:input message="tns:updateSellerOrderSoapIn" />
+      <wsdl:output message="tns:updateSellerOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSellerOrder">
+      <wsdl:input message="tns:deleteSellerOrderSoapIn" />
+      <wsdl:output message="tns:deleteSellerOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SellerServiceSoap" type="tns:SellerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addCustomerOrder">
+      <soap:operation soapAction="http://tempuri.org/addCustomerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerInventry">
+      <soap:operation soapAction="http://tempuri.org/getSellerInventry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="serachBlanket">
+      <soap:operation soapAction="http://tempuri.org/serachBlanket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerOrder">
+      <soap:operation soapAction="http://tempuri.org/getCustomerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerDistributorRequests">
+      <soap:operation soapAction="http://tempuri.org/getSellerDistributorRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSellerDistributorRequest">
+      <soap:operation soapAction="http://tempuri.org/addSellerDistributorRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerOrder">
+      <soap:operation soapAction="http://tempuri.org/updateSellerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSellerOrder">
+      <soap:operation soapAction="http://tempuri.org/deleteSellerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SellerServiceSoap12" type="tns:SellerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addCustomerOrder">
+      <soap12:operation soapAction="http://tempuri.org/addCustomerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerInventry">
+      <soap12:operation soapAction="http://tempuri.org/getSellerInventry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="serachBlanket">
+      <soap12:operation soapAction="http://tempuri.org/serachBlanket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerOrder">
+      <soap12:operation soapAction="http://tempuri.org/getCustomerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerDistributorRequests">
+      <soap12:operation soapAction="http://tempuri.org/getSellerDistributorRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSellerDistributorRequest">
+      <soap12:operation soapAction="http://tempuri.org/addSellerDistributorRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerOrder">
+      <soap12:operation soapAction="http://tempuri.org/updateSellerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSellerOrder">
+      <soap12:operation soapAction="http://tempuri.org/deleteSellerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SellerService">
+    <wsdl:port name="SellerServiceSoap" binding="tns:SellerServiceSoap">
+      <soap:address location="https://localhost:44345/SellerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SellerServiceSoap12" binding="tns:SellerServiceSoap12">
+      <soap12:address location="https://localhost:44345/SellerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

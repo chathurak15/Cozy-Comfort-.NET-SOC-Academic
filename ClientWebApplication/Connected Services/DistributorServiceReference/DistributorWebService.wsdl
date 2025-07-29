@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getDistributorInventry">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDistributorInventryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDistributorInventryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSellerOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="distributorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSellerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSellerOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDistributorOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="distributorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDistributorOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDistributorOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSellerRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="distributorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSellerRequestStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateSellerRequestStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkStockAvaialbilty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkStockAvaialbiltyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkStockAvaialbiltyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addDistributorStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modelId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distributorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addDistributorStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addDistributorStockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteDistributorOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteDistributorOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteDistributorOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getDistributorInventrySoapIn">
+    <wsdl:part name="parameters" element="tns:getDistributorInventry" />
+  </wsdl:message>
+  <wsdl:message name="getDistributorInventrySoapOut">
+    <wsdl:part name="parameters" element="tns:getDistributorInventryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSellerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:getSellerOrder" />
+  </wsdl:message>
+  <wsdl:message name="getSellerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:getSellerOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDistributorOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:getDistributorOrders" />
+  </wsdl:message>
+  <wsdl:message name="getDistributorOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:getDistributorOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSellerRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:updateSellerRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="updateSellerRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:updateSellerRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkStockAvaialbiltySoapIn">
+    <wsdl:part name="parameters" element="tns:checkStockAvaialbilty" />
+  </wsdl:message>
+  <wsdl:message name="checkStockAvaialbiltySoapOut">
+    <wsdl:part name="parameters" element="tns:checkStockAvaialbiltyResponse" />
+  </wsdl:message>
+  <wsdl:message name="addDistributorStockSoapIn">
+    <wsdl:part name="parameters" element="tns:addDistributorStock" />
+  </wsdl:message>
+  <wsdl:message name="addDistributorStockSoapOut">
+    <wsdl:part name="parameters" element="tns:addDistributorStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="updateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteDistributorOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteDistributorOrder" />
+  </wsdl:message>
+  <wsdl:message name="deleteDistributorOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteDistributorOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DistributorWebServiceSoap">
+    <wsdl:operation name="getDistributorInventry">
+      <wsdl:input message="tns:getDistributorInventrySoapIn" />
+      <wsdl:output message="tns:getDistributorInventrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSellerOrder">
+      <wsdl:input message="tns:getSellerOrderSoapIn" />
+      <wsdl:output message="tns:getSellerOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrders">
+      <wsdl:input message="tns:getDistributorOrdersSoapIn" />
+      <wsdl:output message="tns:getDistributorOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerRequestStatus">
+      <wsdl:input message="tns:updateSellerRequestStatusSoapIn" />
+      <wsdl:output message="tns:updateSellerRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkStockAvaialbilty">
+      <wsdl:input message="tns:checkStockAvaialbiltySoapIn" />
+      <wsdl:output message="tns:checkStockAvaialbiltySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addDistributorStock">
+      <wsdl:input message="tns:addDistributorStockSoapIn" />
+      <wsdl:output message="tns:addDistributorStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input message="tns:updateOrderSoapIn" />
+      <wsdl:output message="tns:updateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDistributorOrder">
+      <wsdl:input message="tns:deleteDistributorOrderSoapIn" />
+      <wsdl:output message="tns:deleteDistributorOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DistributorWebServiceSoap" type="tns:DistributorWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDistributorInventry">
+      <soap:operation soapAction="http://tempuri.org/getDistributorInventry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerOrder">
+      <soap:operation soapAction="http://tempuri.org/getSellerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrders">
+      <soap:operation soapAction="http://tempuri.org/getDistributorOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/updateSellerRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkStockAvaialbilty">
+      <soap:operation soapAction="http://tempuri.org/checkStockAvaialbilty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDistributorStock">
+      <soap:operation soapAction="http://tempuri.org/addDistributorStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://tempuri.org/updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDistributorOrder">
+      <soap:operation soapAction="http://tempuri.org/deleteDistributorOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DistributorWebServiceSoap12" type="tns:DistributorWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDistributorInventry">
+      <soap12:operation soapAction="http://tempuri.org/getDistributorInventry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellerOrder">
+      <soap12:operation soapAction="http://tempuri.org/getSellerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistributorOrders">
+      <soap12:operation soapAction="http://tempuri.org/getDistributorOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSellerRequestStatus">
+      <soap12:operation soapAction="http://tempuri.org/updateSellerRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkStockAvaialbilty">
+      <soap12:operation soapAction="http://tempuri.org/checkStockAvaialbilty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDistributorStock">
+      <soap12:operation soapAction="http://tempuri.org/addDistributorStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap12:operation soapAction="http://tempuri.org/updateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDistributorOrder">
+      <soap12:operation soapAction="http://tempuri.org/deleteDistributorOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DistributorWebService">
+    <wsdl:port name="DistributorWebServiceSoap" binding="tns:DistributorWebServiceSoap">
+      <soap:address location="https://localhost:44345/DistributorWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DistributorWebServiceSoap12" binding="tns:DistributorWebServiceSoap12">
+      <soap12:address location="https://localhost:44345/DistributorWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
